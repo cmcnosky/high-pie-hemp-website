@@ -5,6 +5,17 @@ window.HP_PAGE = function () {
   var A = HP.art;
   var host = HP.$("[data-cart-page]");
 
+  if (!HP.BRAND.commerceEnabled) {
+    HP.cart.clear();
+    host.innerHTML = '<div class="empty wrap--narrow" style="margin-inline:auto">' +
+      A.icon("lock") +
+      '<h2>Purchasing is coming soon</h2>' +
+      '<p>You can browse the complete High Pie collection, but online orders are not being accepted yet.</p>' +
+      '<a class="btn btn--forest" href="shop.html">Browse products</a>' +
+    '</div>';
+    return;
+  }
+
   function render() {
     var lines = HP.cart.lines();
     if (!lines.length) {

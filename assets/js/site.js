@@ -394,7 +394,7 @@
 
     host.innerHTML =
       '<div class="announce"><div class="announce__track">' +
-        '<span class="announce__item">' + A.icon("truck") + "Free shipping on orders $75+</span>" +
+        '<span class="announce__item">' + A.icon("lock") + B.catalogStatus + "</span>" +
         '<span class="announce__item">' + A.icon("leaf") + "Curated hemp products for every part of the day</span>" +
         '<span class="announce__item">' + A.icon("shield") + "Adults 21+ only</span>" +
       "</div></div>" +
@@ -404,8 +404,10 @@
         '<div class="header__actions">' +
           '<button class="icon-btn" data-open-search aria-label="Search products">' + A.icon("search") + "</button>" +
           '<a class="icon-btn header__lab" href="lab-results.html" aria-label="Lab results">' + A.icon("flask") + "</a>" +
-          '<button class="icon-btn" data-open-cart aria-label="Open cart">' + A.icon("cart") +
-            '<span class="cart-count" data-cart-count>0</span></button>' +
+          (B.commerceEnabled
+            ? '<button class="icon-btn" data-open-cart aria-label="Open cart">' + A.icon("cart") +
+              '<span class="cart-count" data-cart-count>0</span></button>'
+            : "") +
           '<button class="icon-btn nav-toggle" data-open-nav aria-label="Open menu">' + A.icon("menu") + "</button>" +
         "</div>" +
       "</div></header>";
@@ -422,7 +424,8 @@
     buildMobileNav();
     $("[data-open-nav]").addEventListener("click", openNav);
     $("[data-open-search]").addEventListener("click", openSearch);
-    $("[data-open-cart]").addEventListener("click", openCart);
+    var cartButton = $("[data-open-cart]");
+    if (cartButton) cartButton.addEventListener("click", openCart);
   }
 
   /* Shop popover: click to toggle, Escape or outside click to dismiss,

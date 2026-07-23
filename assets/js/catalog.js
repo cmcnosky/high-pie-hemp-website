@@ -25,8 +25,8 @@
     instagram: "@HighPieHemp",
     instagramUrl: "https://instagram.com/highpiehemp",
     assetVersion: "20260723-4",
-    commerceEnabled: true,
-    catalogStatus: "High Pie online store",
+    commerceEnabled: false,
+    catalogStatus: "Online purchasing coming soon",
     freeShipThreshold: 7500, // cents
     flatShip: 795,
     taxRate: 0.0825

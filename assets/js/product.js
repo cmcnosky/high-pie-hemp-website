@@ -111,12 +111,19 @@ window.HP_PAGE = function () {
           '<p class="pdp__unit" data-selection></p>' +
           '<div class="pdp__buy mt-2">' +
             '<div class="qty" aria-label="Quantity selector">' +
-              '<button type="button" data-pdp-dec aria-label="Decrease quantity">' + A.icon("minus") + '</button>' +
-              '<input data-pdp-qty type="number" value="1" min="1" inputmode="numeric" aria-label="Quantity">' +
-              '<button type="button" data-pdp-inc aria-label="Increase quantity">' + A.icon("plus") + '</button>' +
+              '<button type="button" data-pdp-dec aria-label="Decrease quantity"' +
+                (HP.BRAND.commerceEnabled ? "" : " disabled") + '>' + A.icon("minus") + '</button>' +
+              '<input data-pdp-qty type="number" value="1" min="1" inputmode="numeric" aria-label="Quantity"' +
+                (HP.BRAND.commerceEnabled ? "" : " disabled") + '>' +
+              '<button type="button" data-pdp-inc aria-label="Increase quantity"' +
+                (HP.BRAND.commerceEnabled ? "" : " disabled") + '>' + A.icon("plus") + '</button>' +
             '</div>' +
-            '<button class="btn btn--forest" type="button" data-add data-qty="1">Add to cart</button>' +
+            '<button class="btn btn--forest" type="button" data-add data-qty="1"' +
+              (HP.BRAND.commerceEnabled ? "" : ' disabled aria-disabled="true"') + '>' +
+              (HP.BRAND.commerceEnabled ? "Add to cart" : "Purchasing coming soon") + '</button>' +
           '</div>' +
+          (HP.BRAND.commerceEnabled ? "" :
+            '<p class="pdp__unit mt-1">Products are available to browse; online orders are not being accepted yet.</p>') +
           '<ul class="pdp__assure">' +
             '<li>' + A.icon("truck") + 'Free shipping on orders $75+</li>' +
             '<li>' + A.icon("box") + 'Discreet outer packaging</li>' +
