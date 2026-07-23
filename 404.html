@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — High Pie</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#14291f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400..600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2314291f'/%3E%3Cpath d='M28 56a22 22 0 0 1 44 0Z' fill='%23d2551f'/%3E%3Cpath d='M16 72 34 51l10 11 9-13 15 17 10-8 6 14Z' fill='%237c9a3f'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div data-chrome="header"></div>
+
+<main id="main">
+  <section class="section on-dark center">
+    <div class="wrap wrap--narrow">
+      <div style="width:96px;margin:0 auto 1.75rem" data-mark></div>
+      <span class="eyebrow eyebrow--light">404</span>
+      <h1>This one's gone to seed</h1>
+      <p class="lede lede--light" style="margin:1.25rem auto 2.25rem">
+        The page you were after does not exist, but the full High Pie shop is one click away.
+      </p>
+      <div class="flex gap-1 wrapf" style="justify-content:center">
+        <a class="btn btn--lg" href="/shop.html">Shop all products</a>
+        <a class="btn btn--lg btn--ghost-light" href="/index.html">Back home</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">High Pie favorites</span>
+        <h2>Explore featured products</h2>
+      </div>
+      <div class="grid grid--4" data-picks></div>
+    </div>
+  </section>
+</main>
+
+<div data-chrome="footer"></div>
+
+<script src="/assets/js/catalog.js?v=20260723-4"></script>
+<script src="/assets/js/art.js?v=20260723-4"></script>
+<script src="/assets/js/site.js?v=20260723-4"></script>
+<script>
+window.HP_PAGE = function () {
+  HP.$("[data-mark]").innerHTML = HP.art.mark({ sun: "#d3a02c" });
+  var picks = HP.PRODUCTS.filter(function (p) { return p.featured; }).slice(0, 4);
+  HP.$("[data-picks]").innerHTML = picks.map(HP.card).join("");
+};
+</script>
+</body>
+</html>

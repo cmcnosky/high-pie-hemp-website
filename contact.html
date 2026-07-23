@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Contact High Pie</title>
+<meta name="description" content="Contact High Pie customer care about products, orders, lab results, partnerships, or website support.">
+<meta name="theme-color" content="#14291f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&amp;family=Inter:wght@400..600&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2314291f'/%3E%3Cpath d='M28 56a22 22 0 0 1 44 0Z' fill='%23d2551f'/%3E%3Cpath d='M16 72 34 51l10 11 9-13 15 17 10-8 6 14Z' fill='%237c9a3f'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div data-chrome="header"></div>
+
+<main id="main">
+  <section class="page-head">
+    <div class="page-head__glow"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span aria-hidden="true">›</span><span>Contact</span>
+      </nav>
+      <span class="eyebrow">Customer care</span>
+      <h1>How can we help?</h1>
+      <p>
+        Tell us what you need and include your order number when your question is about an existing order.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="checkout">
+        <div>
+          <form class="panel" novalidate data-contact>
+            <div class="panel__title">Send us a note</div>
+            <p style="color:var(--muted);margin-bottom:1.5rem">
+              Required fields are marked. Do not include passwords, card numbers, government ID
+              images, medical records or other sensitive information.
+            </p>
+
+            <div class="field--half">
+              <div class="field" data-field="name">
+                <label for="name">Your name <span aria-hidden="true">*</span></label>
+                <input id="name" name="name" autocomplete="name" required aria-describedby="name-error" aria-invalid="false">
+                <p class="field__err" id="name-error">Enter your name.</p>
+              </div>
+              <div class="field" data-field="email">
+                <label for="email">Reply email <span aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error" aria-invalid="false" placeholder="you@example.com">
+                <p class="field__err" id="email-error">Enter a valid email address.</p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="topic">Topic</label>
+              <select id="topic" name="topic">
+                <option>Product question</option>
+                <option>Order or delivery help</option>
+                <option>Lab result or label question</option>
+                <option>Accessibility or website issue</option>
+                <option>Business or partnership inquiry</option>
+                <option>Privacy or data question</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="field" data-field="message">
+              <label for="message">Message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" required minlength="5" aria-describedby="message-hint message-error" aria-invalid="false" placeholder="Include the page and what you expected if you are reporting a website issue."></textarea>
+              <p class="field__hint" id="message-hint">A screenshot may help, but remove any sensitive information first.</p>
+              <p class="field__err" id="message-error">Write at least five characters.</p>
+            </div>
+
+            <button class="btn btn--block btn--lg" type="submit">Email customer care</button>
+            <p class="note" data-contact-status role="status" aria-live="polite" hidden></p>
+          </form>
+        </div>
+
+        <aside class="summary">
+          <div class="panel">
+            <div class="panel__title">Reach us directly</div>
+            <ul class="stack" style="--stack:1.1rem" data-contact-list></ul>
+          </div>
+
+          <div class="panel">
+            <div class="panel__title">Before you write</div>
+            <ul class="footer__links mt-2" style="--stack:.5rem">
+              <li><a class="link" href="faq.html">Frequently asked questions</a></li>
+              <li class="mt-1"><a class="link" href="learn.html">Safety and label guide</a></li>
+              <li class="mt-1"><a class="link" href="lab-results.html">Lab results</a></li>
+              <li class="mt-1"><a class="link" href="policies.html#shipping">Shipping and returns</a></li>
+              <li class="mt-1"><a class="link" href="policies.html#privacy">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="panel__title">Order help</div>
+            <p style="font-size:.92rem;color:var(--muted)">
+              Include your order number, delivery ZIP code, and the email address used at checkout
+              so customer care can find your order quickly.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div data-chrome="footer"></div>
+
+<script src="assets/js/catalog.js?v=20260723-4"></script>
+<script src="assets/js/art.js?v=20260723-4"></script>
+<script src="assets/js/site.js?v=20260723-4"></script>
+<script>
+window.HP_PAGE = function () {
+  var A = HP.art, $ = HP.$, B = HP.BRAND;
+  var list = $("[data-contact-list]");
+
+  [
+    ["mail", "Email", B.email, "mailto:" + B.email],
+    ["phone", "Phone", B.phone, B.phoneHref],
+    ["insta", "Instagram", B.instagram, B.instagramUrl]
+  ].forEach(function (item) {
+    var row = document.createElement("li");
+    row.style.display = "flex";
+    row.style.gap = ".85rem";
+    row.style.alignItems = "flex-start";
+
+    var icon = document.createElement("span");
+    icon.style.color = "var(--orange-deep)";
+    icon.style.flex = "none";
+    icon.style.marginTop = "2px";
+    icon.setAttribute("aria-hidden", "true");
+    icon.innerHTML = A.icon(item[0]);
+
+    var text = document.createElement("span");
+    var label = document.createElement("span");
+    label.style.display = "block";
+    label.style.fontSize = ".65rem";
+    label.style.letterSpacing = ".16em";
+    label.style.textTransform = "uppercase";
+    label.style.color = "var(--muted-2)";
+    label.textContent = item[1];
+
+    var link = document.createElement("a");
+    link.href = item[3];
+    link.style.color = "var(--forest)";
+    link.style.textDecoration = "underline";
+    link.style.textUnderlineOffset = "3px";
+    link.textContent = item[2];
+    if (item[1] === "Instagram") {
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+    }
+
+    text.appendChild(label);
+    text.appendChild(link);
+    row.appendChild(icon);
+    row.appendChild(text);
+    list.appendChild(row);
+  });
+
+  var form = $("[data-contact]");
+  var status = $("[data-contact-status]");
+  var rules = {
+    name: function (value) { return value.trim().length > 0; },
+    email: function (value) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim()); },
+    message: function (value) { return value.trim().length >= 5; }
+  };
+
+  function check(id) {
+    var field = form.querySelector('[data-field="' + id + '"]');
+    var control = field.querySelector("input, textarea");
+    var valid = rules[id](control.value);
+    field.classList.toggle("is-bad", !valid);
+    control.setAttribute("aria-invalid", String(!valid));
+    return valid;
+  }
+
+  form.addEventListener("blur", function (event) {
+    var field = event.target.closest("[data-field]");
+    if (field && rules[field.getAttribute("data-field")]) {
+      check(field.getAttribute("data-field"));
+    }
+  }, true);
+
+  form.addEventListener("input", function (event) {
+    var field = event.target.closest("[data-field]");
+    if (field && field.classList.contains("is-bad") && rules[field.getAttribute("data-field")]) {
+      check(field.getAttribute("data-field"));
+    }
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var valid = Object.keys(rules).map(check).every(Boolean);
+    if (!valid) {
+      var firstInvalid = form.querySelector('[aria-invalid="true"]');
+      status.hidden = false;
+      status.classList.add("note--warn");
+      status.textContent = "Check the highlighted fields. No email draft has been opened.";
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    var name = $("#name").value.trim();
+    var email = $("#email").value.trim();
+    var topic = $("#topic").value;
+    var message = $("#message").value.trim();
+    var subject = "High Pie website: " + topic;
+    var body = [
+      "Name: " + name,
+      "Reply email: " + email,
+      "Topic: " + topic,
+      "",
+      message
+    ].join("\n");
+
+    status.hidden = false;
+    status.classList.remove("note--warn");
+    status.textContent = "Your browser was asked to open an email draft. Review it and press Send in your email app; this page has not submitted anything.";
+    window.location.href = "mailto:" + B.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  });
+};
+</script>
+</body>
+</html>

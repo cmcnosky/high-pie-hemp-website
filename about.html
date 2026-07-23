@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>About High Pie</title>
+<meta name="description" content="Meet High Pie: a curated hemp brand organized around clear product formats and three signature profiles.">
+<meta name="theme-color" content="#14291f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&amp;family=Inter:wght@400..600&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%2314291f'/%3E%3Cpath d='M28 56a22 22 0 0 1 44 0Z' fill='%23d2551f'/%3E%3Cpath d='M16 72 34 51l10 11 9-13 15 17 10-8 6 14Z' fill='%237c9a3f'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div data-chrome="header"></div>
+
+<main id="main">
+  <section class="page-head">
+    <div class="page-head__glow"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span aria-hidden="true">›</span><span>About</span>
+      </nav>
+      <span class="eyebrow">Our story</span>
+      <h1>Cannabis. Curated. Conscious.</h1>
+      <p>
+        High Pie brings a clearer point of view to hemp: a tightly edited product shelf,
+        recognizable profiles, and packaging that feels considered from every angle.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <nav class="toc" aria-label="On this page">
+          <div class="filter__title">On this page</div>
+          <a href="#approach">Our approach</a>
+          <a href="#profiles">Three profiles</a>
+          <a href="#formats">A complete shelf</a>
+          <a href="#care">Customer care</a>
+        </nav>
+
+        <div class="prose">
+          <h2 id="approach">Our approach</h2>
+          <p>
+            High Pie is built around a simple idea: shopping for hemp should feel calm, coherent,
+            and easy to understand. We organize the assortment by familiar formats and a profile
+            system that stays consistent across gummies, flower, pre-rolls, and extracts.
+          </p>
+          <p>
+            Forest green and cream anchor the brand. Burnt tangerine, dusty rose, aubergine, and
+            deep teal make each profile easy to spot. The result is one family of products that
+            works together without every item looking the same.
+          </p>
+
+          <h2 id="profiles">Three signature profiles</h2>
+          <p>
+            Daybreak, Golden Hour, and Nightfall move through the rhythm of a day. They make it
+            easier to browse while leaving room for personal preference, format, and flavor.
+          </p>
+          <div class="grid grid--3 mt-2" data-arc></div>
+
+          <h2 id="formats">A complete shelf</h2>
+          <p>
+            Some days call for a ten-piece gummy box; others call for flower in clear glass,
+            a seven-pack tin, a full-spectrum applicator, or a botanical salve. High Pie keeps
+            those formats distinct while carrying the same visual language through the entire line.
+          </p>
+
+          <h2 id="care">Customer care</h2>
+          <p>
+            Product questions should have straightforward answers. Our safety guide, lab-results
+            guide, shipping information, and customer-care channels are always available from the
+            main navigation and footer.
+          </p>
+          <div class="flex gap-1 wrapf mt-2">
+            <a class="btn btn--forest" href="shop.html">Shop High Pie</a>
+            <a class="btn btn--ghost" href="contact.html">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight on-sage" aria-labelledby="values-title">
+    <div class="wrap">
+      <h2 class="visually-hidden" id="values-title">High Pie values</h2>
+      <div class="standard" data-standard></div>
+    </div>
+  </section>
+
+  <section class="section on-dark center">
+    <div class="wrap wrap--narrow">
+      <span class="eyebrow eyebrow--light">Find your High Pie</span>
+      <h2>Start with the format you already love.</h2>
+      <p class="lede lede--light" style="margin:1rem auto 2rem">
+        Then explore Daybreak, Golden Hour, and Nightfall from there.
+      </p>
+      <a class="btn btn--lg" href="shop.html">Shop all products</a>
+    </div>
+  </section>
+</main>
+
+<div data-chrome="footer"></div>
+
+<script src="assets/js/catalog.js?v=20260723-4"></script>
+<script src="assets/js/art.js?v=20260723-4"></script>
+<script src="assets/js/site.js?v=20260723-4"></script>
+<script>
+window.HP_PAGE = function () {
+  var A = HP.art, $ = HP.$;
+
+  $("[data-standard]").innerHTML = [
+    ["box", "Thoughtful presentation"],
+    ["leaf", "A tightly edited assortment"],
+    ["target", "Easy profile navigation"],
+    ["truck", "Straightforward delivery"],
+    ["mail", "Direct customer care"]
+  ].map(function (item) {
+    return '<div class="standard__item">' + A.icon(item[0]) + "<span>" + item[1] + "</span></div>";
+  }).join("");
+
+  $("[data-arc]").innerHTML = ["sativa", "hybrid", "indica"].map(function (key) {
+    var profile = HP.PROFILES[key];
+    var icon = key === "sativa" ? "sun" : key === "indica" ? "moon" : "leaf";
+    return '<a class="intent" href="shop.html?profile=' + key + '" style="--profile:' +
+      profile.color + ';--profile-ink:' + profile.ink + '">' +
+      '<div class="intent__mark">' + A.icon(icon) + "</div>" +
+      "<h3>" + profile.arc + "</h3>" +
+      '<div class="intent__sub">' + profile.label + "</div>" +
+      "<p>" + profile.line + "</p></a>";
+  }).join("");
+};
+</script>
+</body>
+</html>
