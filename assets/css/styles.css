@@ -1869,6 +1869,23 @@ table.data tbody tr:last-child td { border-bottom: none; }
 }
 .footer__legal-row nav { display: flex; gap: 1.35rem; flex-wrap: wrap; }
 .footer__legal-row a:hover { color: var(--cream); }
+.nofai-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: rgba(250, 249, 244, 0.68);
+  font-size: 0.78rem;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+}
+.nofai-credit img {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(250, 249, 244, 0.12);
+}
+.nofai-credit strong { color: var(--cream); font-weight: 600; }
 
 /* --------------------------------------------------------------------------
    22. Utilities

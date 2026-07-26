@@ -24,7 +24,7 @@
     email: "hello@highpiehemp.com",
     instagram: "@HighPieHemp",
     instagramUrl: "https://instagram.com/highpiehemp",
-    assetVersion: "20260725-2",
+    assetVersion: "20260725-3",
     commerceEnabled: false,
     catalogStatus: "Online purchasing coming soon",
     freeShipThreshold: 7500, // cents

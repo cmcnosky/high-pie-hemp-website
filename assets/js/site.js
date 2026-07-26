@@ -550,7 +550,7 @@
     }).join("");
 
     host.innerHTML =
-      '<footer class="footer">' +
+      '<footer class="footer" id="site-footer">' +
         A.waves({ to: "#14291f", flip: true }) +
         '<div class="wrap footer__inner">' +
           '<div class="footer__brand">' + A.logo({ light: true }) +
@@ -582,6 +582,10 @@
           "<p>Always follow the package label. Product availability and shipping eligibility vary by destination. Nothing on this site is medical or legal advice.</p>" +
           '<div class="footer__legal-row">' +
             "<span>© " + new Date().getFullYear() + " " + B.legal + ". All rights reserved.</span>" +
+            '<div class="nofai-credit" aria-label="Made with NoFAI">' +
+              '<img src="assets/img/nofai-symbol.png?v=' + B.assetVersion + '" alt="" width="34" height="34">' +
+              '<span>Made with <strong>NoFAI</strong></span>' +
+            '</div>' +
             "<nav>" +
               '<a href="policies.html">Terms</a>' +
               '<a href="policies.html#privacy">Privacy</a>' +
