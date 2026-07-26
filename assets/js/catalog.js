@@ -24,7 +24,7 @@
     email: "hello@highpiehemp.com",
     instagram: "@HighPieHemp",
     instagramUrl: "https://instagram.com/highpiehemp",
-    assetVersion: "20260723-4",
+    assetVersion: "20260725-2",
     commerceEnabled: false,
     catalogStatus: "Online purchasing coming soon",
     freeShipThreshold: 7500, // cents
@@ -273,6 +273,36 @@
     };
   }
 
+  function rso(o) {
+    return {
+      id: o.id,
+      name: o.name,
+      category: "rso",
+      profile: o.profile,
+      cannabinoid: o.cannabinoid,
+      art: "rso-syringe",
+      photos: [o.photo],
+      subtitle: "1 g applicator · " + o.label,
+      featured: !!o.featured,
+      short: o.short,
+      description: o.short,
+      optionNames: [],
+      variants: [
+        v([], o.price, {
+          sku: o.sku,
+          stock: 24
+        })
+      ],
+      specs: {
+        "Net weight": "1 g (0.035 oz)",
+        "Format": "Full-spectrum RSO in a graduated glass applicator",
+        "Profile": HP.PROFILES[o.profile].label,
+        "Cannabinoid": o.label,
+        "Packaging": "Fitted presentation carton"
+      }
+    };
+  }
+
   /* ------------------------------------------------------------ Products */
   HP.PRODUCTS = [
 
@@ -356,84 +386,90 @@
     }),
 
     /* ================================ RSO ================================ */
-    {
-      id: "rso-thc",
-      name: "Full-Spectrum RSO — THC",
-      category: "rso",
+    rso({
+      id: "granddaddy-purple-cbd-rso",
+      name: "Granddaddy Purple CBD RSO",
+      profile: "indica",
+      cannabinoid: "cbd",
+      label: "CBD",
+      photo: "rso-granddaddy-purple-cbd",
+      sku: "HP-RSO-GDP-CBD",
+      price: 4800,
+      short: "Granddaddy Purple full-spectrum CBD RSO in a one-gram graduated applicator."
+    }),
+
+    rso({
+      id: "runts-cbd-rso",
+      name: "Runts CBD RSO",
+      profile: "hybrid",
+      cannabinoid: "cbd",
+      label: "CBD",
+      photo: "rso-runts-cbd",
+      sku: "HP-RSO-RUN-CBD",
+      price: 4800,
+      short: "Runts full-spectrum CBD RSO in a one-gram graduated applicator."
+    }),
+
+    rso({
+      id: "jack-herer-cbd-rso",
+      name: "Jack Herer CBD RSO",
+      profile: "sativa",
+      cannabinoid: "cbd",
+      label: "CBD",
+      photo: "rso-jack-herer-cbd",
+      sku: "HP-RSO-JH-CBD",
+      price: 4800,
+      short: "Jack Herer full-spectrum CBD RSO in a one-gram graduated applicator."
+    }),
+
+    rso({
+      id: "runts-thc-rso",
+      name: "Runts THC RSO",
       profile: "hybrid",
       cannabinoid: "thc",
-      art: "rso-syringe",
-      photos: ["rso-hybrid-a", "rso-hybrid-b"],
-      subtitle: "1 g applicator · three profiles",
+      label: "THC",
+      photo: "rso-runts-thc",
+      sku: "HP-RSO-RUN-THC",
+      price: 5500,
       featured: true,
-      rating: 4.9,
-      reviews: 168,
-      short: "One gram of unfiltered, full-spectrum THC extract in a graduated glass applicator.",
-      description:
-        "Whole-plant extract, ethanol-washed and vacuum-purged, with nothing stripped back out. No " +
-        "distillation, no added terpenes, no cutting agents — which is why it is dark, thick and tastes " +
-        "exactly like the plant it came from. The applicator is graduated in tenths so you can actually " +
-        "measure a dose, and it ships in a fitted drawer carton that will stand up in a drawer for a year.",
-      optionNames: ["Profile"],
-      variants: [
-        v(["Northern Lights · Indica"], 5500, { note: "842 mg total cannabinoids · 71.4% THC", sku: "HP-RSO-IND-001", stock: 18, profileOverride: "indica", photos: ["rso-indica-a", "rso-indica-b"] }),
-        v(["Jack Herer · Sativa"], 5500, { note: "836 mg total cannabinoids · 70.1% THC", sku: "HP-RSO-SAT-001", stock: 16, profileOverride: "sativa", photos: ["rso-sativa-a", "rso-sativa-b"] }),
-        v(["Blue Dream · Hybrid"], 5500, { note: "851 mg total cannabinoids · 72.0% THC", sku: "HP-RSO-HYB-001", stock: 21, profileOverride: "hybrid", photos: ["rso-hybrid-a", "rso-hybrid-b"] })
-      ],
-      potency: { thc: "70.1 – 72.0%", cbd: "1.8 – 2.4%", total: "836 – 851 mg per applicator" },
-      effects: ["Potent", "Long-lasting", "Whole-plant", "Body-forward"],
-      specs: {
-        "Net weight": "1 g",
-        "Applicator": "Luer-lock borosilicate glass · 10.8 mm barrel × 79.8 mm",
-        "Graduation": "0.1 g increments",
-        "Extraction": "Cold ethanol wash, rotary recovered, vacuum purged",
-        "Additives": "None. No distillate, no cutting agents, no botanical terpenes",
-        "Typical dose": "A grain of rice (~25 mg) to start",
-        "Storage": "Cool and dark. Warm the barrel in your hand before dispensing",
-        "Packaging": "Fitted rigid drawer carton, 1.25 × 1.25 × 6 in",
-        "Batch": "HP-2606-RSO"
-      },
-      lab: { batch: "HP-2606-RSO", harvest: "2026-04-02", status: "Current" }
-    },
+      short: "Runts full-spectrum THC RSO in a one-gram graduated applicator."
+    }),
 
-    {
-      id: "rso-cbd",
-      name: "Full-Spectrum RSO — CBD",
-      category: "rso",
-      profile: "cbd",
-      cannabinoid: "cbd",
-      art: "rso-syringe",
-      photos: ["rso-cbd-a", "rso-cbd-b"],
-      subtitle: "1 g applicator · three profiles",
-      rating: 4.8,
-      reviews: 94,
-      short: "The same whole-plant process, run on high-CBD cultivars. Under 0.3% THC.",
-      description:
-        "Identical extraction to our THC line, run on three high-CBD cultivars instead. You get the full " +
-        "cannabinoid and terpene envelope — CBD, CBG, CBC and the minor acids — with the THC left below the " +
-        "0.3% federal threshold. This is the one people reach for when they want the body effect of a " +
-        "full-spectrum extract during the working day, or to blend down a THC dose that landed too hard.",
-      optionNames: ["Profile"],
-      variants: [
-        v(["Bubba Kush CBD · Indica"], 4800, { note: "884 mg total cannabinoids · 74.2% CBD", sku: "HP-RSO-CBD-IND", stock: 14, profileOverride: "indica" }),
-        v(["Sour Space Candy · Sativa"], 4800, { note: "871 mg total cannabinoids · 72.9% CBD", sku: "HP-RSO-CBD-SAT", stock: 12, profileOverride: "sativa" }),
-        v(["ACDC · Hybrid"], 4800, { note: "897 mg total cannabinoids · 76.1% CBD", sku: "HP-RSO-CBD-HYB", stock: 19, profileOverride: "hybrid" })
-      ],
-      potency: { thc: "<0.3%", cbd: "72.9 – 76.1%", total: "871 – 897 mg per applicator" },
-      effects: ["Non-intoxicating", "Body-calm", "Anti-inflammatory", "Clear"],
-      specs: {
-        "Net weight": "1 g",
-        "Applicator": "Luer-lock borosilicate glass · 10.8 mm barrel × 79.8 mm",
-        "Graduation": "0.1 g increments",
-        "Extraction": "Cold ethanol wash, rotary recovered, vacuum purged",
-        "THC content": "Below 0.3% Δ9 THC by dry weight",
-        "Typical dose": "A grain of rice (~25 mg) to start",
-        "Storage": "Cool and dark. Warm the barrel in your hand before dispensing",
-        "Packaging": "Fitted rigid drawer carton, 1.25 × 1.25 × 6 in",
-        "Batch": "HP-2606-RSOC"
-      },
-      lab: { batch: "HP-2606-RSOC", harvest: "2026-04-02", status: "Current" }
-    },
+    rso({
+      id: "jack-herer-thc-rso",
+      name: "Jack Herer THC RSO",
+      profile: "sativa",
+      cannabinoid: "thc",
+      label: "THC",
+      photo: "rso-jack-herer-thc",
+      sku: "HP-RSO-JH-THC",
+      price: 5500,
+      short: "Jack Herer full-spectrum THC RSO in a one-gram graduated applicator."
+    }),
+
+    rso({
+      id: "runts-blue-dream-ratio-rso",
+      name: "Runts + Blue Dream 50/50 RSO",
+      profile: "hybrid",
+      cannabinoid: "ratio",
+      label: "50/50 THC + CBD",
+      photo: "rso-runts-blue-dream-ratio",
+      sku: "HP-RSO-RBD-5050",
+      price: 5200,
+      short: "Runts and Blue Dream full-spectrum 50/50 THC + CBD RSO in a one-gram graduated applicator."
+    }),
+
+    rso({
+      id: "granddaddy-purple-thc-rso",
+      name: "Granddaddy Purple THC RSO",
+      profile: "indica",
+      cannabinoid: "thc",
+      label: "THC",
+      photo: "rso-granddaddy-purple-thc",
+      sku: "HP-RSO-GDP-THC",
+      price: 5500,
+      short: "Granddaddy Purple full-spectrum THC RSO in a one-gram graduated applicator."
+    }),
 
     /* =============================== FLOWER =============================== */
     /* Nine cultivars, three per profile. Every one is photographed — the
@@ -1043,42 +1079,6 @@
     },
 
     {
-      id: "rso-starter",
-      name: "The RSO Starter",
-      category: "bundles",
-      profile: "cbd",
-      cannabinoid: "ratio",
-      art: "bundle-box",
-      photos: ["rso-balanced-a", "rso-balanced-b"],
-      subtitle: "Both extracts plus the salve",
-      rating: 4.8,
-      reviews: 42,
-      short: "One THC RSO, one CBD RSO and a jar of Relief Salve. Save $17.",
-      description:
-        "The set to buy if you are working with RSO for the first time. A gram of THC RSO and a gram of " +
-        "CBD RSO — both hybrid profile — so you can titrate between them, plus a jar of Relief Salve for " +
-        "anything better handled topically. Ships with our printed RSO dosing card, which is the single " +
-        "most useful thing in the box.",
-      optionNames: [],
-      variants: [
-        v([], 17500, { compare: 19200, note: "Save $17", stock: 12, sku: "HP-BDL-RSO" })
-      ],
-      contents: [
-        { id: "rso-thc", label: "Full-Spectrum RSO — THC · Blue Dream", value: 5500 },
-        { id: "rso-cbd", label: "Full-Spectrum RSO — CBD · ACDC", value: 4800 },
-        { id: "relief-salve", label: "Relief Salve — 2 oz", value: 8900 }
-      ],
-      effects: ["Potent", "Titratable", "Whole-plant"],
-      specs: {
-        "Contents": "3 items — see breakdown",
-        "Retail value": "$192.00",
-        "Bundle price": "$175.00",
-        "Profiles": "Hybrid THC and hybrid CBD",
-        "Packaging": "Printed rigid box with fitted applicator wells and an RSO dosing card"
-      }
-    },
-
-    {
       id: "nightfall-set",
       name: "The Nightfall Set",
       category: "bundles",
@@ -1125,7 +1125,9 @@
   var STORE_IDS = [
     "jack-herer-gummies", "blue-dream-gummies", "northern-lights-gummies",
     "northern-lights", "jack-herer", "runtz",
-    "rso-thc", "rso-cbd",
+    "granddaddy-purple-cbd-rso", "runts-cbd-rso", "jack-herer-cbd-rso",
+    "runts-thc-rso", "jack-herer-thc-rso", "runts-blue-dream-ratio-rso",
+    "granddaddy-purple-thc-rso",
     "sundial-sativa", "sundial-hybrid", "sundial-indica",
     "relief-salve", "flower-flight"
   ];
@@ -1137,8 +1139,13 @@
     "northern-lights": "Sweet pine and earthy notes in a clear-glass 3.5 g jar.",
     "jack-herer": "Pine, black pepper, and orange-rind character in a clear-glass 3.5 g jar.",
     "runtz": "Candied fruit, sweet cream, and a gassy finish in a clear-glass 3.5 g jar.",
-    "rso-thc": "One gram of full-spectrum extract in Northern Lights or Jack Herer.",
-    "rso-cbd": "One gram of full-spectrum ACDC CBD extract in a graduated applicator.",
+    "granddaddy-purple-cbd-rso": "Granddaddy Purple full-spectrum CBD RSO in a one-gram graduated applicator.",
+    "runts-cbd-rso": "Runts full-spectrum CBD RSO in a one-gram graduated applicator.",
+    "jack-herer-cbd-rso": "Jack Herer full-spectrum CBD RSO in a one-gram graduated applicator.",
+    "runts-thc-rso": "Runts full-spectrum THC RSO in a one-gram graduated applicator.",
+    "jack-herer-thc-rso": "Jack Herer full-spectrum THC RSO in a one-gram graduated applicator.",
+    "runts-blue-dream-ratio-rso": "Runts and Blue Dream full-spectrum 50/50 THC + CBD RSO in a one-gram graduated applicator.",
+    "granddaddy-purple-thc-rso": "Granddaddy Purple full-spectrum THC RSO in a one-gram graduated applicator.",
     "sundial-sativa": "Seven whole-flower Jack Herer pre-rolls in a profile-coded tin.",
     "sundial-hybrid": "Seven whole-flower Blue Dream pre-rolls in a profile-coded tin.",
     "sundial-indica": "Seven whole-flower Northern Lights pre-rolls in a profile-coded tin.",
@@ -1153,8 +1160,13 @@
     "northern-lights": "1/8 oz · Indica",
     "jack-herer": "1/8 oz · Sativa",
     "runtz": "1/8 oz · Hybrid",
-    "rso-thc": "1 g applicator · two profiles",
-    "rso-cbd": "1 g applicator · ACDC",
+    "granddaddy-purple-cbd-rso": "1 g applicator · Indica · CBD",
+    "runts-cbd-rso": "1 g applicator · Hybrid · CBD",
+    "jack-herer-cbd-rso": "1 g applicator · Sativa · CBD",
+    "runts-thc-rso": "1 g applicator · Hybrid · THC",
+    "jack-herer-thc-rso": "1 g applicator · Sativa · THC",
+    "runts-blue-dream-ratio-rso": "1 g applicator · Hybrid · 50/50 THC + CBD",
+    "granddaddy-purple-thc-rso": "1 g applicator · Indica · THC",
     "sundial-sativa": "Seven-Pack · 7 × 0.75 g · Jack Herer",
     "sundial-hybrid": "Seven-Pack · 7 × 0.75 g · Blue Dream",
     "sundial-indica": "Seven-Pack · 7 × 0.75 g · Northern Lights",
@@ -1177,17 +1189,6 @@
       });
     }
     if (p.category === "prerolls") p.variants = p.variants.slice(-1);
-    if (p.id === "rso-thc") {
-      p.variants = p.variants.slice(0, 2);
-      p.photos = p.variants[0].photos;
-      p.profile = "indica";
-      p.variants.forEach(function (variant) { variant.note = "1 g applicator"; });
-    }
-    if (p.id === "rso-cbd") {
-      p.variants = p.variants.slice(2, 3);
-      p.variants.forEach(function (variant) { variant.note = "1 g applicator"; });
-    }
-
     p.rating = null;
     p.reviews = null;
     p.lab = null;

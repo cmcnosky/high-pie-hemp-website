@@ -1289,6 +1289,11 @@ p { text-wrap: pretty; }
 
 .pdp__buy { display: flex; gap: 0.7rem; align-items: stretch; margin-bottom: 1.1rem; }
 .pdp__buy .btn { flex: 1; padding-block: 0; min-height: 50px; }
+@media (max-width: 420px) {
+  .pdp__buy { flex-direction: column; }
+  .pdp__buy .qty { width: 100%; justify-content: space-between; }
+  .pdp__buy .btn { width: 100%; }
+}
 
 .pdp__assure {
   display: flex;

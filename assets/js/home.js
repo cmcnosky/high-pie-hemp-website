@@ -43,7 +43,7 @@ window.HP_PAGE = function () {
     gummies: "gummy-hybrid-10-b",
     flower: "flower-runtz-b",
     prerolls: "preroll-hybrid-pack-b",
-    rso: "rso-indica-b",
+    rso: "rso-runts-thc",
     topicals: "topical-b-v2",
     bundles: "bundle-flight-b"
   };
