@@ -4,8 +4,8 @@
 
 High Pie is a responsive, multi-page storefront preview built with plain HTML,
 CSS, and JavaScript. The repository turns a product catalog, a distinct visual
-system, and real product photography into a fast GitHub Pages experience with
-no application framework or build step.
+system, and product imagery into a fast GitHub Pages experience with no
+application framework or build step.
 
 ## Case study
 
@@ -57,8 +57,8 @@ node scripts/verify-portfolio.mjs
 ```
 
 The check validates the catalog totals, unique product identifiers, required
-product structure, the commerce boundary, and every local `href` or `src`
-referenced by the static HTML pages.
+product structure, `commerceEnabled: false`, the cart and checkout boundary
+text, and every local `href` or `src` referenced by the static HTML pages.
 
 ## Repository map
 
