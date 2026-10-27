@@ -582,10 +582,10 @@
           "<p>Always follow the package label. Product availability and shipping eligibility vary by destination. Nothing on this site is medical or legal advice.</p>" +
           '<div class="footer__legal-row">' +
             "<span>© " + new Date().getFullYear() + " " + B.legal + ". All rights reserved.</span>" +
-            '<div class="nofai-credit" aria-label="Made with NoFAI">' +
-              '<img src="assets/img/nofai-symbol.png?v=' + B.assetVersion + '" alt="" width="34" height="34">' +
-              '<span>Made with <strong>NoFAI</strong></span>' +
-            '</div>' +
+            '<a class="cleargrain-credit" href="https://cleargraindocs.com/" aria-label="Made with Cleargrain Docs">' +
+              '<img src="assets/img/cleargrain-docs-mark.png?v=' + B.assetVersion + '" alt="" width="34" height="34">' +
+              '<span>Made with <strong>Cleargrain Docs</strong></span>' +
+            '</a>' +
             "<nav>" +
               '<a href="policies.html">Terms</a>' +
               '<a href="policies.html#privacy">Privacy</a>' +
